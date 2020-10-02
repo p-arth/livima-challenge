@@ -1,0 +1,37 @@
+.home-navbar {
+    height: 64px;
+    padding: 0 28px;
+    z-index: 10000;
+    font-family: "LatoRegular";
+    color: #434E59;
+}
+
+.navbar-default {
+    background-color: #fff;
+    border-color: #eeeeee;
+}
+
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+    border-radius: 0;
+    position: fixed;
+    right: 0;
+    left: 0;
+}
+
+.navbar-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right-side-navbar {
+    display: flex;
+    height: 100%;
+}
+
+.link-to-pages {
+    display: flex;
+}
