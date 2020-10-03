@@ -1,37 +1,45 @@
 .home-navbar {
-    height: 64px;
-    padding: 0 28px;
-    z-index: 10000;
-    font-family: "LatoRegular";
-    color: #434E59;
+  height: 64px;
+  padding: 0 28px;
+  z-index: 100;
+  font-family: 'Lato', sans-serif;
+  color: #434E59;
 }
 
 .navbar-default {
-    background-color: #fff;
-    border-color: #eeeeee;
+  background-color: #fff;
+  border-color: #eeeeee;
 }
 
 .navbar-fixed-top {
-    top: 0;
-    border-width: 0 0 1px;
-    border-radius: 0;
-    position: fixed;
-    right: 0;
-    left: 0;
+  top: 0;
+  border-width: 0 0 1px;
+  border-radius: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
 }
 
 .navbar-content {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .right-side-navbar {
-    display: flex;
-    height: 100%;
+  display: flex;
+  height: 100%;
 }
 
 .link-to-pages {
-    display: flex;
+  display: flex;
+  list-style-type: none;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.link-to-pages a {
+  text-decoration: none;
+  padding: 20px 25px 25px 25px;
 }

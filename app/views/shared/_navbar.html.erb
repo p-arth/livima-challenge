@@ -1,14 +1,26 @@
 <navbar class="navbar-default navbar-fixed-top home-navbar">
-    <div class="navbar-content">
-        <div class="main-logo">
-            <a href="/"><img alt="Logo Livima" src="/assets/navbar-logo.png"></a>
-        </div>
-        <div class="right-side-navbar">
-            <div class="link-to-pages">
-                <a href="/users/sign_in">Entrar</a></li>
-                <a href="/users/sign_out">Sair</a></li>
+  <div class="navbar-content">
+    <%= link_to root_path, class: "main-logo" do %>
+        <%= image_tag "/assets/navbar-logo.png" %>
+    <% end %>
 
-            </div>
-        </div>
-    </div>
+    <% if user_signed_in? %>
+      <div class="right-side-navbar">
+          <div class="link-to-pages">        
+            <%= link_to "Perfil", user_path(current_user) %>
+            <% if current_user.admin? %>
+              <%= link_to "Funcionários", destroy_user_session_path, method: :delete %>
+            <% end %>
+            <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+          </div>
+      </div>
+    <% else %>
+      <div class="right-side-navbar">
+          <div class="link-to-pages">        
+            <%= link_to "Entrar", new_user_session_path %>
+          </div>
+      </div>
+    <% end %>
+    
+  </div>
 </navbar>
