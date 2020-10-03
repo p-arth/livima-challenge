@@ -9,14 +9,14 @@
           <div class="link-to-pages">        
             <%= link_to "Perfil", user_path(current_user) %>
             <% if current_user.admin? %>
-              <%= link_to "Funcionários", destroy_user_session_path, method: :delete %>
+              <%= link_to "Funcionários", users_path %>
             <% end %>
             <%= link_to "Sair", destroy_user_session_path, method: :delete %>
           </div>
       </div>
     <% else %>
       <div class="right-side-navbar">
-          <div class="link-to-pages">        
+          <div class="link-to-pages"> 
             <%= link_to "Entrar", new_user_session_path %>
           </div>
       </div>

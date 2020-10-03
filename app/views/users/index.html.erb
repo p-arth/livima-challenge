@@ -1,0 +1,5 @@
+<%= link_to "Adicionar novo funcionário", new_user_path, class: "text-center" %>
+
+<% @users.each do |user| %>
+  <p class="text-center">Nome: <%= user.nome %> | Cargo: <%= user.cargo %> | Salário: <%= user.salário %> | Email: <%= user.email %></p> <%= link_to "<i class='fas fa-wrench'></i>".html_safe, edit_user_path(user) %>
+<% end %>
