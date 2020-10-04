@@ -1,5 +1,13 @@
 <%= link_to "Adicionar novo funcionário", new_user_path, class: "text-center" %>
 
+<%= render 'shared/search-bar' %>
+
+<% if @searched == true %>
+  <h2 class="text-center">Seus resultados:</h2>
+<% else %>
+  <h2 class="text-center">Todos os funcionários</h2>
+<% end %>
+
 <div class="users-container">
   <% @users.each do |user| %>
     <div class="user">

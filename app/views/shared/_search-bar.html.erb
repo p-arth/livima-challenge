@@ -1,0 +1,12 @@
+<%= form_tag users_path, method: :get, class: "form-inline" do %>
+  <%= render 'shared/search-dropdown' %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control ml-0 w-25",
+    type: "text",
+    placeholder: "Ache um funcionário"
+  %>
+  <%= button_tag type: 'submit', class: "form-control search-button", id: "search-button" do %>
+    <i class="fas fa-search" aria-hidden="true"></i>
+  <% end %>
+<% end %>

@@ -3,7 +3,18 @@ class UsersController < ApplicationController
   before_action :authorize_user
 
   def index
-    @users = policy_scope(User.all).order(created_at: :desc)
+    if params[:query].present?
+      @searched = true
+      if params[:search_filter] == "pornome"
+        @users = policy_scope(User.search_by_nome(params[:query]))
+      elsif params[:search_filter] == "poremail"
+        @users = policy_scope(User.search_by_email(params[:query]))
+      else
+        @users = policy_scope(User.search_by_cargo(params[:query]))
+      end
+    else
+      @users = policy_scope(User.all).order(created_at: :desc)
+    end
   end
 
   def show
