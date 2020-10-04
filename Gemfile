@@ -68,3 +68,5 @@ gem 'devise'
 gem 'pundit'
 # Search
 gem 'pg_search'
+# Slack Notifier
+gem "slack-notifier"
