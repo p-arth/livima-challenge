@@ -1,5 +1,16 @@
 <%= link_to "Adicionar novo funcionário", new_user_path, class: "text-center" %>
 
-<% @users.each do |user| %>
-  <p class="text-center">Nome: <%= user.nome %> | Cargo: <%= user.cargo %> | Salário: <%= user.salário %> | Email: <%= user.email %></p> <%= link_to "<i class='fas fa-wrench'></i>".html_safe, edit_user_path(user) %>
-<% end %>
+<div class="users-container">
+  <% @users.each do |user| %>
+    <div class="user">
+      <p class="text-center">Nome: <%= user.nome %> | Cargo: <%= user.cargo %> | Salário: <%= user.salário %> | Email: <%= user.email %></p>
+      <div class="user-icons">
+        <%= link_to "<i class='fas fa-user'></i>".html_safe, user_path(user) %>
+        <%= link_to "<i class='fas fa-wrench'></i>".html_safe, edit_user_path(user) %>
+        <% if user.admin == false %>
+          <%= link_to "<i class='fas fa-trash'></i>".html_safe, user_path(user), method: :delete, data: { confirm: "Tem certeza?" } %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
         devise_parameter_sanitizer.permit(:sign_up, keys: [:nome, :cargo, :salário])
 
         # campos adicionais a se mudar na edição do cadastro
-        devise_parameter_sanitizer.permit(:account_update, keys: [:cargo, :salário])
+        devise_parameter_sanitizer.permit(:account_update, keys: [:email, :cargo, :salário])
     end
 end

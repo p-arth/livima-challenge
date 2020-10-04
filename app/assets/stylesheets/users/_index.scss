@@ -1,0 +1,16 @@
+
+.users-container {
+    display: block;
+    margin: auto;
+}
+
+.user {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.user-icons {
+    margin-left: 10px;
+    justify-content: space-between;
+}

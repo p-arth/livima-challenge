@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      redirect_to users_path, notice: "Updated User."
+      redirect_to users_path, notice: "Usuário atualizado."
     else
       render :edit
     end
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to users_path, notice: "User succesfully created!" 
+      redirect_to users_path, notice: "Usuário criado!" 
     else
       render :new
     end
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to root_path
+    redirect_to users_path, notice: "Usuário excluído."
   end
 
   private
