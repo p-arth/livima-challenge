@@ -1,4 +1,4 @@
-<h2>Edit <%= @user.nome %></h2>
+<h2>Atualizar <%= @user.nome %></h2>
 
 <%= simple_form_for @user do |f| %>
   <%= f.error_notification %>
@@ -15,8 +15,8 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Atualizar", class: "main-btn" %>
   </div>
 <% end %>
 
-<%= link_to "Back", :back %>
+<%= link_to "Voltar", :back %>

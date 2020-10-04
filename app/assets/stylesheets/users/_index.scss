@@ -1,21 +1,36 @@
 
 .users-container {
-    display: block;
-    margin: auto;
+  display: block;
+  margin: auto;
 }
 
 .user {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .user-icons {
-    margin-left: 10px;
-    justify-content: space-between;
+  margin-left: 10px;
+  justify-content: space-between;
 }
 
 .form-inline {
-    justify-content: center;
-    margin: 15px;
+  justify-content: center;
+  margin: 15px;
+}
+
+.new-user {
+  text-align: center;
+  margin-left: 50px;
+  text-decoration: none !important;
+  color: white;
+  padding: 15px;
+  background-color: #BD95E6;
+  border-radius: 15px;
+}
+
+.new-user:hover {
+  color: white;
+  background-color: #9874bf;
 }

@@ -20,14 +20,15 @@
                 input_html: { autocomplete: "Nome completo" } %>
     <%= f.input :cargo,
                 required: true,
-                input_html: { autocomplete: "Nome completo" } %>
+                input_html: { autocomplete: "Cargo" } %>
     <%= f.input :salário,
                 required: true,
-                input_html: { autocomplete: "Nome completo" } %>
+                input_html: { autocomplete: "Salário em R$" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Cadastrar", class: "main-btn" %>
   </div>
 <% end %>
 
+<%= link_to "Voltar", :back %>

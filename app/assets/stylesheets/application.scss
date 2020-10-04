@@ -17,3 +17,23 @@
 .main-container {
   margin-top: 85px;
 }
+
+.main-btn {
+  text-align: center;
+  margin: 25px;
+  text-decoration: none !important;
+  color: white;
+  padding: 15px;
+  background-color: #BD95E6;
+  border-radius: 15px;
+}
+
+.main-btn:hover {
+  color: white;
+  background-color: #9874bf;
+}
+
+.form-inputs {
+  margin-left: 50px;
+  max-width: 50vw;
+}
