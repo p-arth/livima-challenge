@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   before_action :set_user, except: [:index, :new, :create]
+  before_action :authorize_user
 
   def index
-    @users = User.all
+    @users = policy_scope(User.all).order(created_at: :desc)
   end
 
   def show
-    @user = User.find_by_id(params[:id])
   end
 
   def new
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(user_params)
       redirect_to users_path, notice: "Usuário atualizado."
     else
-      render :edit
+      render :edit, notice: "Ocorreu algum problema ao tentar atualizar o usuário."
     end
   end
 
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_path, notice: "Usuário criado!" 
     else
-      render :new
+      render :new, notice: "Ocorreu algum problema ao tentar criar o usuário."
     end
   end
 
@@ -44,11 +44,18 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
-    # authorize @user
   end
 
   def user_params
     params.require(:user).permit(:nome, :email, :password, :password_confirmation, :cargo, :salário)
+  end
+
+  def authorize_user
+    if @user.nil?
+      authorize User
+    else
+      authorize @user
+    end
   end
 
 end
